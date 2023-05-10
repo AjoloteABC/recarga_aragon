@@ -1,0 +1,47 @@
+{
+  "project_info": {
+    "project_number": "407567695978",
+    "project_id": "recarga-unam",
+    "storage_bucket": "recarga-unam.appspot.com"
+  },
+  "client": [
+    {
+      "client_info": {
+        "mobilesdk_app_id": "1:407567695978:android:aa1952f5e621e9f10d0a13",
+        "android_client_info": {
+          "package_name": "com.ajoloteAbc.unam_movil"
+        }
+      },
+      "oauth_client": [
+        {
+          "client_id": "407567695978-8dmqpv3qq6l1qne6bu65cc9kdgp3itcg.apps.googleusercontent.com",
+          "client_type": 1,
+          "android_info": {
+            "package_name": "com.ajoloteAbc.unam_movil",
+            "certificate_hash": "8dd1983702b02ec1ea8d1b41a4b1fe23a4d98e28"
+          }
+        },
+        {
+          "client_id": "407567695978-ijo5d0hl5b9gd6dss0dqf1cm66fas9mt.apps.googleusercontent.com",
+          "client_type": 3
+        }
+      ],
+      "api_key": [
+        {
+          "current_key": "AIzaSyDqFy8CZoi_mWq20b_SKsIIv9TU158lEts"
+        }
+      ],
+      "services": {
+        "appinvite_service": {
+          "other_platform_oauth_client": [
+            {
+              "client_id": "407567695978-ijo5d0hl5b9gd6dss0dqf1cm66fas9mt.apps.googleusercontent.com",
+              "client_type": 3
+            }
+          ]
+        }
+      }
+    }
+  ],
+  "configuration_version": "1"
+}
