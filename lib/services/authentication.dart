@@ -3,7 +3,10 @@ import 'package:firebase_core/firebase_core.dart';
 import 'package:flutter/material.dart';
 import 'package:unam_movil/pages/my_navigation_bar.dart';
 import 'package:google_sign_in/google_sign_in.dart';
+import 'package:unam_movil/services/global_variables.dart';
 import 'package:flutter/foundation.dart' show kIsWeb;
+import 'package:cloud_firestore/cloud_firestore.dart';
+import 'package:unam_movil/pages/my_user_info.dart';
 
 // Se encarga de hacer la autentificacion de la cuenta google con firebase
 
@@ -26,6 +29,12 @@ class Authentication {
     User? user = FirebaseAuth.instance.currentUser;
 
     if (user != null) {
+      String uid = user.uid;
+      GlobalVariables.setUID(uid);
+      String? name = user.displayName;
+      GlobalVariables.setName(name!);
+      String? email = user.email;
+      GlobalVariables.setEmail(email!);
       Navigator.of(context).pushReplacement(
         MaterialPageRoute(
           builder: (context) => MyNavigationBar(
@@ -68,6 +77,49 @@ class Authentication {
               await auth.signInWithCredential(credential);
 
           user = userCredential.user;
+
+          if (user != null) {
+            String uid = user.uid;
+            GlobalVariables.setUID(uid);
+            String? name = user.displayName;
+            GlobalVariables.setName(name!);
+            String? email = user.email;
+            GlobalVariables.setEmail(email!);
+
+
+            // Verificar si es la primera vez que el usuario ingresa
+            DocumentSnapshot userDoc = await FirebaseFirestore.instance
+                .collection('usuarios_google')
+                .doc(uid)
+                .get();
+
+            if (userDoc.exists) {
+              // El usuario ya ha ingresado antes, redirigir a la clase deseada
+              Navigator.of(context).pushReplacement(
+                MaterialPageRoute(
+                  builder: (context) => MyNavigationBar(user: user!,),
+                ),
+              );
+            } else {
+              // Es la primera vez que el usuario ingresa, crear un nuevo documento en la base de datos
+              await FirebaseFirestore.instance
+                  .collection('usuarios_google')
+                  .doc(uid)
+                  .set({
+                'name': user.displayName,
+                'email': user.email,
+                // Agrega cualquier otra información que quieras guardar para el usuario
+              });
+              // Redirigir a una nueva clase
+              Navigator.of(context).pushReplacement(
+                MaterialPageRoute(
+                  builder: (context) => MyInfo(user: user!,),
+                ),
+              );
+            }
+
+
+          }
         } on FirebaseAuthException catch (e) {
           if (e.code == 'account-exists-with-different-credential') {
             ScaffoldMessenger.of(context).showSnackBar(

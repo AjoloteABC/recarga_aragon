@@ -37,11 +37,14 @@ dependencies:
   cupertino_icons: ^1.0.2
   flutter_native_splash: ^2.2.19 #Pantalla de carga
   flutter_launcher_icons: ^0.13.1 #Icono
-  google_nav_bar: ^5.0.6
-  line_icons: ^2.0.1
+  google_nav_bar: ^5.0.6 #NavBar
+  line_icons: ^2.0.1  #
   firebase_core: ^2.11.0
   google_sign_in: ^6.1.0
   firebase_auth: ^4.5.0
+  flutter_osm_plugin: ^0.53.4+1
+  nfc_manager: ^3.2.0
+  cloud_firestore: ^4.7.1
 
 
 dev_dependencies:

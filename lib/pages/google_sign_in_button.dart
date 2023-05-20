@@ -41,15 +41,7 @@ class _GoogleSignInButtonState extends State<GoogleSignInButton> {
             _isSigningIn = false;
           });
 
-          if (user != null) {
-            Navigator.of(context).pushReplacement(
-              MaterialPageRoute(
-                builder: (context) =>
-                    MyNavigationBar(user: user,),
-                    //UserInfoScreen(user: user,),
-              ),
-            );
-          }
+          
         },
         child: Padding(
           padding: const EdgeInsets.fromLTRB(0, 10, 0, 10),

@@ -3,7 +3,9 @@ import 'package:flutter/material.dart';
 import 'package:google_nav_bar/google_nav_bar.dart';
 import 'package:line_icons/line_icons.dart';
 import 'package:unam_movil/pages/user_info_screen.dart';
-
+import 'package:unam_movil/pages/my_map.dart';
+import 'package:unam_movil/pages/my_nfc.dart';
+import 'package:unam_movil/pages/my_user_info.dart';
 // La informacion del usuario una vez iniciada sesion
 
 class MyNavigationBar extends StatefulWidget {
@@ -23,9 +25,11 @@ class _MyNavigationBarState extends State<MyNavigationBar> {
   static List<Widget> _widgetOptions(User user) {
     return [
       UserInfoScreen(user: user),
-      Text('Aqui va el NFC'),
-      Text('Posible mapa con puntos de recarga?'),
-      Text('Agregar datos personales'),
+      MyNFC(),
+      MyMap(),
+      Text('Actualizar datos'),
+      //MyInfo(user: user),
+
     ];
   }
 
