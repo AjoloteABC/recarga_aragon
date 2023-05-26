@@ -2,10 +2,11 @@ import 'package:firebase_auth/firebase_auth.dart';
 import 'package:flutter/material.dart';
 import 'package:google_nav_bar/google_nav_bar.dart';
 import 'package:line_icons/line_icons.dart';
+import 'package:unam_movil/pages/my_user_info.dart';
 import 'package:unam_movil/pages/user_info_screen.dart';
 import 'package:unam_movil/pages/my_map.dart';
 import 'package:unam_movil/pages/my_nfc.dart';
-import 'package:unam_movil/pages/my_user_info.dart';
+import 'package:unam_movil/pages/my_profile.dart';
 // La informacion del usuario una vez iniciada sesion
 
 class MyNavigationBar extends StatefulWidget {
@@ -27,7 +28,7 @@ class _MyNavigationBarState extends State<MyNavigationBar> {
       UserInfoScreen(user: user),
       MyNFC(),
       MyMap(),
-      Text('Actualizar datos'),
+      MyProfile(),
       //MyInfo(user: user),
 
     ];

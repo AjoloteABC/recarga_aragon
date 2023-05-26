@@ -43,6 +43,7 @@ class _MyMapState extends State<MyMap> {
             maxZoomLevel: 19,
             stepZoom: 1.0,
             // [01]
+
             userLocationMarker: UserLocationMaker(
               personMarker: const MarkerIcon(
                 icon: Icon(
@@ -78,9 +79,15 @@ class _MyMapState extends State<MyMap> {
             right: 50.0,
             child: FloatingActionButton(
               onPressed: () async {
+                var markerMap= GeoPoint(latitude: 19.473874, longitude:-99.045600);
                 await controller.currentLocation();
                 await controller.limitAreaMap(BoundingBox( east: -99.040518, north: 19.475940, south: 19.472821, west: -99.048137,));
                 await controller.setZoom(zoomLevel:19);
+                //await controller.changeLocation(GeoPoint(latitude: 19.473974, longitude:-99.995928));
+                await controller.addMarker(markerMap,markerIcon: const MarkerIcon(
+                  icon: Icon(Icons.pin_drop,color: Colors.blue,size: 100,),
+                ),);
+
 
               },
               child: const Icon(Icons.my_location),

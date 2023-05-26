@@ -2,6 +2,7 @@ import 'package:firebase_auth/firebase_auth.dart';
 import 'package:flutter/material.dart';
 import 'package:unam_movil/pages/sign_in_screen.dart';
 import 'package:unam_movil/services/authentication.dart';
+import 'package:unam_movil/services/shared_preferences.dart';
 
 
 // La informacion del usuario una vez iniciada sesion
@@ -29,7 +30,6 @@ class _UserInfoScreenState extends State<UserInfoScreen> {
         var begin = Offset(-1.0, 0.0);
         var end = Offset.zero;
         var curve = Curves.ease;
-
         var tween =
             Tween(begin: begin, end: end).chain(CurveTween(curve: curve));
 
@@ -55,6 +55,8 @@ class _UserInfoScreenState extends State<UserInfoScreen> {
       appBar: AppBar(
         elevation: 0,
         backgroundColor: Colors.black,
+        title: Text('Pantalla principal'),
+
       ),
       body: SafeArea(
         child: Padding(
@@ -129,7 +131,7 @@ class _UserInfoScreenState extends State<UserInfoScreen> {
                   : ElevatedButton(
                       style: ButtonStyle(
                         backgroundColor: MaterialStateProperty.all(
-                          Colors.blueAccent,
+                          Colors.black,
                         ),
                         shape: MaterialStateProperty.all(
                           RoundedRectangleBorder(

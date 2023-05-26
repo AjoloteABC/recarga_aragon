@@ -45,6 +45,8 @@ dependencies:
   flutter_osm_plugin: ^0.53.4+1
   nfc_manager: ^3.2.0
   cloud_firestore: ^4.7.1
+  firebase_database: ^10.2.1
+  shared_preferences: ^2.1.1
 
 
 dev_dependencies:

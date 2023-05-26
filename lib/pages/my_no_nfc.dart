@@ -1,6 +1,8 @@
 import 'package:flutter/material.dart';
 import 'package:cloud_firestore/cloud_firestore.dart';
 import 'package:unam_movil/services/global_variables.dart';
+import 'package:firebase_database/firebase_database.dart';
+
 
 class MyNoNFC extends StatefulWidget {
   const MyNoNFC({Key? key}) : super(key: key);
@@ -24,16 +26,19 @@ class _MyNoNFCState extends State<MyNoNFC> {
   }
   //Inicializamos la base de datos
   FirebaseFirestore db = FirebaseFirestore.instance;
+  FirebaseDatabase database = FirebaseDatabase.instance;
 
   //Metodo para cargar o recibir datos de FireBase
   void _loadCounter() {
     //Manda a llamar la coleccion usuario y buscando el documento de acuerdo al
     //numero de cuenta almacenado en la variable
-    db.collection("usuarios").doc(numeroCuenta).get().then((docSnapshot) {
+    db.collection("usuarios").doc(numeroCuenta).get().then((docSnapshot) async {
       //Si el docomento existe obtine:
       if (docSnapshot.exists) {
         //El UID de Google de la BD
         String uidFirestore = docSnapshot.data()!['UID_usuario'];
+        String nfc = docSnapshot.data()!['NFC'];
+
         //El UID almacenado en el telefono
         String globalUid = GlobalVariables.getUID();
         print('UID almacenado globalmente: $globalUid');
@@ -42,10 +47,19 @@ class _MyNoNFCState extends State<MyNoNFC> {
         //Si ambos ID son iguales, procede a obtener el valor de saldo de la BD
         // Y lo asigna a la variable saldo del telefono
         if (uidFirestore == globalUid) {
-          int incremento = docSnapshot.data()!['saldo'];
-          setState(() {
-            _counter = incremento;
-          });
+          //DatabaseReference ref = FirebaseDatabase.instance.ref();
+          final ref = FirebaseDatabase.instance.ref();
+          final snapshot = await ref.child(nfc).get();
+          if (snapshot.exists) {
+            print(snapshot.value);
+            int incremento = int.parse(snapshot.value.toString());
+            setState(() {
+              _counter = incremento;
+            });
+          } else {
+            print('No data available.');
+          }
+
         } else {
           //Si no es así pone el saldo en 0 y muestra un ShowDialog
           setState(() {
@@ -69,6 +83,24 @@ class _MyNoNFCState extends State<MyNoNFC> {
             },
           );
         }
+      }else{
+        showDialog(
+          context: context,
+          builder: (BuildContext context) {
+            return AlertDialog(
+              title: Text('Error'),
+              content: Text('No existe el numero de cuenta'),
+              actions: [
+                TextButton(
+                  onPressed: () {
+                    Navigator.of(context).pop();
+                  },
+                  child: Text('Aceptar'),
+                ),
+              ],
+            );
+          },
+        );
       }
     });
   }
@@ -180,4 +212,6 @@ class _MyNoNFCState extends State<MyNoNFC> {
           ),
         ]));
   }
+
+
 }

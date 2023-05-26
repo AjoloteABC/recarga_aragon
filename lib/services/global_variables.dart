@@ -2,6 +2,7 @@ class GlobalVariables {
   static String uid = '';
   static String name = '';
   static String email = '';
+  static String cuenta = '';
 
   static void setUID(String value) {
     uid = value;
@@ -24,5 +25,14 @@ class GlobalVariables {
 
   static String getEmail() {
     return email;
+  }
+
+
+  static void setCuenta(String value) {
+    cuenta = value;
+  }
+
+  static String getCuenta() {
+    return cuenta;
   }
 }

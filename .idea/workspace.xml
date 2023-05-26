@@ -26,9 +26,14 @@
       <change beforePath="$PROJECT_DIR$/android/.gradle/file-system.probe" beforeDir="false" afterPath="$PROJECT_DIR$/android/.gradle/file-system.probe" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/android/app/src/main/AndroidManifest.xml" beforeDir="false" afterPath="$PROJECT_DIR$/android/app/src/main/AndroidManifest.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/android/app/src/main/java/io/flutter/plugins/GeneratedPluginRegistrant.java" beforeDir="false" afterPath="$PROJECT_DIR$/android/app/src/main/java/io/flutter/plugins/GeneratedPluginRegistrant.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/lib/pages/google_sign_in_button.dart" beforeDir="false" afterPath="$PROJECT_DIR$/lib/pages/google_sign_in_button.dart" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/android/local.properties" beforeDir="false" afterPath="$PROJECT_DIR$/android/local.properties" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/lib/pages/my_map.dart" beforeDir="false" afterPath="$PROJECT_DIR$/lib/pages/my_map.dart" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/lib/pages/my_navigation_bar.dart" beforeDir="false" afterPath="$PROJECT_DIR$/lib/pages/my_navigation_bar.dart" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/lib/services/authentication.dart" beforeDir="false" afterPath="$PROJECT_DIR$/lib/services/authentication.dart" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/lib/pages/my_nfc.dart" beforeDir="false" afterPath="$PROJECT_DIR$/lib/pages/my_nfc.dart" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/lib/pages/my_no_nfc.dart" beforeDir="false" afterPath="$PROJECT_DIR$/lib/pages/my_no_nfc.dart" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/lib/pages/my_user_info.dart" beforeDir="false" afterPath="$PROJECT_DIR$/lib/pages/my_user_info.dart" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/lib/pages/user_info_screen.dart" beforeDir="false" afterPath="$PROJECT_DIR$/lib/pages/user_info_screen.dart" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/lib/services/global_variables.dart" beforeDir="false" afterPath="$PROJECT_DIR$/lib/services/global_variables.dart" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/pubspec.yaml" beforeDir="false" afterPath="$PROJECT_DIR$/pubspec.yaml" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
@@ -62,7 +67,7 @@
     &quot;cidr.known.project.marker&quot;: &quot;true&quot;,
     &quot;dart.analysis.tool.window.visible&quot;: &quot;false&quot;,
     &quot;io.flutter.reload.alreadyRun&quot;: &quot;true&quot;,
-    &quot;last_opened_file_path&quot;: &quot;C:/Users/alexv/StudioProjects/program_movil_uno&quot;,
+    &quot;last_opened_file_path&quot;: &quot;C:/Users/alexv/StudioProjects/recarga_aragon&quot;,
     &quot;project.structure.last.edited&quot;: &quot;Libraries&quot;,
     &quot;project.structure.proportion&quot;: &quot;0.0&quot;,
     &quot;project.structure.side.proportion&quot;: &quot;0.2&quot;,
